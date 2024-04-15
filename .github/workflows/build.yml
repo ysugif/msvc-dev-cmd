@@ -25,7 +25,7 @@ jobs:
       - name: Compile and run some C code
         shell: cmd
         run: |
-	  make check
+          make check
           hello.exe
           hello.exe | hello2.exe
   audit:
