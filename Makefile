@@ -57,7 +57,7 @@ check :
 	$(MAKE) show_padevice
 	#$(MAKE) show_asio
 	cl.exe hello.c
-	cl.exe hello2.cpp
+	cl.exe -I./libs hello2.cpp
 	#hello.exe
 	#hello.exe | hello2.exe
 

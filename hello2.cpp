@@ -1,5 +1,5 @@
 #include <iostream>
-#include "picojson.h"
+#include "picojson/picojson.h"
 
 int main(int argc, char **argv)
 {
