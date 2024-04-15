@@ -62,7 +62,7 @@ libarchive:
 	#)
 
 	#### examples
-	( cd build ; tar -cf - examples) \
+	( cd libs/portaudio/build ; tar -cf - examples) \
 	| ( cd $(ARTIFACTS_DIR) \
 		&& tar -xvf - \
 	)
