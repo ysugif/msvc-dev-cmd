@@ -55,7 +55,14 @@ ARTIFACTS_DIR=ci_artifacts
 CI_ARTIFACTS_SUFFIX=Windows-X64
 
 libarchive:
-	( tar -cf - libs) \
+	##### libs before build
+	#( tar -cf - libs) \
+	#| ( cd $(ARTIFACTS_DIR) \
+	#	&& tar -xvf - \
+	#)
+
+	#### examples
+	( cd build ; tar -cf - examples) \
 	| ( cd $(ARTIFACTS_DIR) \
 		&& tar -xvf - \
 	)
@@ -71,8 +78,8 @@ archive_artifacts :
 
 check :
 	$(MAKE) config_libportaudio
-	$(MAKE) archive_artifacts
 	$(MAKE) build_libportaudio
+	$(MAKE) archive_artifacts
 	$(MAKE) show_padevice
 	#$(MAKE) show_asio
 	cl.exe hello.c
