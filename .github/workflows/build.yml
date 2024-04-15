@@ -19,7 +19,8 @@ jobs:
         shell: cmd
         run: |
           cl.exe hello.c
-          hello.exe
+          cl.exe hello2.cpp
+          hello.exe | hello2.exe
   audit:
     name: npm audit
     runs-on: ubuntu-latest
