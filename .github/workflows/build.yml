@@ -30,7 +30,12 @@ jobs:
           make check
           hello.exe
           hello.exe | hello2.exe
-  audit:
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci_artifacts-${{ runner.os }}-${{ runner.arch }}.tgz
+          path: ci_artifacts-${{ runner.os }}-${{ runner.arch }}.tgz
+audit:
     name: npm audit
     runs-on: ubuntu-latest
     steps:
