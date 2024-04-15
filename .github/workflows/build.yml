@@ -14,7 +14,7 @@ jobs:
       - name: Setup Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@release/v1
       - name: Check out source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
           with:
             submodules: recursive
 #      - name: Compile and run some C code
