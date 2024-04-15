@@ -19,6 +19,7 @@ config_libportaudio:
 				-DCMAKE_INSTALL_PREFIX=`pwd`/../install \
 				-DPA_BUILD_EXAMPLES=on \
 				-DPA_BUILD_TESTS=on \
+				-DPA_USE_ASIO=on \
 		) \
 	)
 
