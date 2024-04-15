@@ -37,10 +37,16 @@ build_libportaudio:
 		) \
 	)
 
+show_padevice:
+	( cd libs/portaudio/build/examples \
+		&& ./pa_devs \
+	)
+
 
 check :
 	$(MAKE) config_libportaudio
 	$(MAKE) build_libportaudio
+	$(MAKE) show_padevice
 	cl.exe hello.c
 	cl.exe hello2.cpp
 	#hello.exe
