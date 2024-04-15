@@ -15,13 +15,16 @@ jobs:
         uses: ilammy/msvc-dev-cmd@release/v1
       - name: Check out source code
         uses: actions/checkout@v2
+#      - name: Compile and run some C code
+#        shell: cmd
+#        run: |
+#          cl.exe hello.c
+#          cl.exe hello2.cpp
+#          hello.exe
+#          hello.exe | hello2.exe
       - name: Compile and run some C code
         shell: cmd
-        run: |
-          cl.exe hello.c
-          cl.exe hello2.cpp
-          hello.exe
-          hello.exe | hello2.exe
+        run: make check
   audit:
     name: npm audit
     runs-on: ubuntu-latest
