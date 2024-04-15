@@ -24,7 +24,10 @@ jobs:
 #          hello.exe | hello2.exe
       - name: Compile and run some C code
         shell: cmd
-        run: make check
+        run: |
+	  make check
+          hello.exe
+          hello.exe | hello2.exe
   audit:
     name: npm audit
     runs-on: ubuntu-latest
