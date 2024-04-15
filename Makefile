@@ -40,7 +40,7 @@ build_libportaudio:
 
 show_padevice:
 	( cd libs/portaudio/build/examples \
-		&& ls la -la \
+		&& ls -la \
 		&& ./pa_devs \
 	)
 
