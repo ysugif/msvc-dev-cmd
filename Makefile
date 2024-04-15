@@ -55,7 +55,7 @@ check :
 	$(MAKE) config_libportaudio
 	$(MAKE) build_libportaudio
 	$(MAKE) show_padevice
-	$(MAKE) show_asio
+	#$(MAKE) show_asio
 	cl.exe hello.c
 	cl.exe hello2.cpp
 	#hello.exe
