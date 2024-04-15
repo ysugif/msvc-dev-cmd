@@ -11,9 +11,9 @@ clone_libportaudio:
 
 config_libportaudio:
 	( cd libs/portaudio  \
-		&& rm -rf buildXcode \
-		&& mkdir -p buildXcode \
-		&& ( cd buildXcode \
+		&& rm -rf build \
+		&& mkdir -p build \
+		&& ( cd build \
 			&& cmake .. \
 				-G "Unix Makefiles" \
 				-DCMAKE_INSTALL_PREFIX=`pwd`/../install \
