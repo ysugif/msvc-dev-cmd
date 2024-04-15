@@ -15,8 +15,8 @@ jobs:
         uses: ilammy/msvc-dev-cmd@release/v1
       - name: Check out source code
         uses: actions/checkout@v4
-          with:
-            submodules: recursive
+        with:
+          submodules: recursive
 #      - name: Compile and run some C code
 #        shell: cmd
 #        run: |
