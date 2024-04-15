@@ -15,12 +15,17 @@ config_libportaudio:
 		&& mkdir -p buildXcode \
 		&& ( cd buildXcode \
 			&& cmake .. \
-				-G "Unix Makefiles" \
+				-G "Visual Studio 17 2022" \
 				-DCMAKE_INSTALL_PREFIX=`pwd`/../install \
 				-DPA_BUILD_EXAMPLES=on \
 				-DPA_BUILD_TESTS=on \
 		) \
 	)
+
+
+#				-G "Unix Makefiles" \
+#
+
 
 build_libportaudio:
 	( cd libs/portaudio ; \
