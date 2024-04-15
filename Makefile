@@ -38,9 +38,10 @@ build_libportaudio:
 		) \
 	)
 
-show_padevice:
+show_asio:
 	( cd libs/portaudio/build/examples \
-		&& ./pa_devs \
+		&& ls la -la \
+		&& ./paex_mono_asio_channel_select \
 	)
 
 
@@ -48,6 +49,7 @@ check :
 	$(MAKE) config_libportaudio
 	$(MAKE) build_libportaudio
 	$(MAKE) show_padevice
+	$(MAKE) show_asio
 	cl.exe hello.c
 	cl.exe hello2.cpp
 	#hello.exe
