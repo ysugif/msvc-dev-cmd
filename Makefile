@@ -51,8 +51,25 @@ show_asio:
 	)
 
 
+ARTIFACTS_DIR=ci_artifacts
+archive_artifacts :
+	( uname -a | tee $(ARTIFACTS_DIR)/uname.txt )
+	( git log | head -1 | tee $(ARTIFACTS_DIR)/commit_id.txt )
+	$(MAKE) libarchive
+	tar -czvf $(ARTIFACTS_DIR)-$(CI_ARTIFACTS_SUFFIX).tgz \
+		$(ARTIFACTS_DIR)
+
+
+archive_artifacts:
+	( tar -cf - libs) \
+	| ( cd $(ARTIFACTS_DIR) \
+		&& tar -xvf - \
+	)
+
+
 check :
 	$(MAKE) config_libportaudio
+	$(MAKE) archive_artifacts
 	$(MAKE) build_libportaudio
 	$(MAKE) show_padevice
 	#$(MAKE) show_asio
