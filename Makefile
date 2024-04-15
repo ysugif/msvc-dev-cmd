@@ -54,7 +54,7 @@ show_asio:
 ARTIFACTS_DIR=ci_artifacts
 CI_ARTIFACTS_SUFFIX=Windows-X64
 
-archive_libs:
+libarchive:
 	( tar -cf - libs) \
 	| ( cd $(ARTIFACTS_DIR) \
 		&& tar -xvf - \
@@ -71,7 +71,6 @@ archive_artifacts :
 
 check :
 	$(MAKE) config_libportaudio
-	$(MAKE) archive_libs
 	$(MAKE) archive_artifacts
 	$(MAKE) build_libportaudio
 	$(MAKE) show_padevice
