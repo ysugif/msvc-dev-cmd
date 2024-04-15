@@ -52,6 +52,15 @@ show_asio:
 
 
 ARTIFACTS_DIR=ci_artifacts
+CI_ARTIFACTS_SUFFIX=Windows-X64
+
+archive_libs:
+	( tar -cf - libs) \
+	| ( cd $(ARTIFACTS_DIR) \
+		&& tar -xvf - \
+	)
+
+
 archive_artifacts :
 	( uname -a | tee $(ARTIFACTS_DIR)/uname.txt )
 	( git log | head -1 | tee $(ARTIFACTS_DIR)/commit_id.txt )
@@ -60,15 +69,9 @@ archive_artifacts :
 		$(ARTIFACTS_DIR)
 
 
-archive_artifacts:
-	( tar -cf - libs) \
-	| ( cd $(ARTIFACTS_DIR) \
-		&& tar -xvf - \
-	)
-
-
 check :
 	$(MAKE) config_libportaudio
+	$(MAKE) archive_libs
 	$(MAKE) archive_artifacts
 	$(MAKE) build_libportaudio
 	$(MAKE) show_padevice
