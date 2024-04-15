@@ -16,7 +16,7 @@ jobs:
       - name: Check out source code
         uses: actions/checkout@v2
 	with:
-	  submodule: recursive
+	  submodules: recursive
 #      - name: Compile and run some C code
 #        shell: cmd
 #        run: |
