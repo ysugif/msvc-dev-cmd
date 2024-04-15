@@ -15,7 +15,7 @@ config_libportaudio:
 		&& mkdir -p buildXcode \
 		&& ( cd buildXcode \
 			&& cmake .. \
-				-G Xcode \
+				-G "Unix Makefiles" \
 				-DCMAKE_INSTALL_PREFIX=`pwd`/../install \
 				-DPA_BUILD_EXAMPLES=on \
 				-DPA_BUILD_TESTS=on \
