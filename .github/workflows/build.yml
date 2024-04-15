@@ -35,7 +35,7 @@ jobs:
         with:
           name: ci_artifacts-${{ runner.os }}-${{ runner.arch }}.tgz
           path: ci_artifacts-${{ runner.os }}-${{ runner.arch }}.tgz
-audit:
+  audit:
     name: npm audit
     runs-on: ubuntu-latest
     steps:
