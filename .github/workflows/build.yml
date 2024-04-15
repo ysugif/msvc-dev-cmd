@@ -1,4 +1,4 @@
-name: msvc-dev-cmd (release)
+name: build
 
 on:
   push:
