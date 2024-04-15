@@ -38,9 +38,15 @@ build_libportaudio:
 		) \
 	)
 
-show_asio:
+show_padevice:
 	( cd libs/portaudio/build/examples \
 		&& ls la -la \
+		&& ./pa_devs \
+	)
+
+
+show_asio:
+	( cd libs/portaudio/build/examples \
 		&& ./paex_mono_asio_channel_select \
 	)
 
